@@ -12,7 +12,7 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const movieSearch = async (title) => {
-    const response = await fetch('https://movie-search-8l5m.onrender.com/', {
+    const response = await fetch('http://localhost:5000', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -27,6 +27,7 @@ const App = () => {
       if (data.movies === undefined) {
         return;
       }
+      console.log(data.movies);
       setMovies(data.movies);
       
     } else {

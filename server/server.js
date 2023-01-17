@@ -1,8 +1,8 @@
 import express from 'express';
-import * as doteven from 'dotenv';
+import * as dotenv from 'dotenv';
 import cors from 'cors';
 
-doteven.config();
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -20,7 +20,6 @@ app.get('/', (req, res) => {
 
 app.post('/', async (req, res) => {
     try {
-        // const moviesList = await fetch(`${URL}&s=${req.body.query}`);
         const moviesList = await fetch(`${URL}&s=${req.body.query}`);
         const data = await moviesList.json();
         const search = data.Search;
