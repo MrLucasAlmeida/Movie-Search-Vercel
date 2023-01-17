@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 const URL = 'http://www.omdbapi.com?apikey=' + process.env.OMDB_API_KEY;
-
+const PORT = process.env.PORT || 5000;
 
 
 app.get('/', (req, res) => {
@@ -34,4 +34,4 @@ app.post('/', async (req, res) => {
 });
 
 
-app.listen(5000, () => {console.log('Server is running on port http://localhost:5000')});
+app.listen(PORT, () => {console.log('Server is running on port http://localhost:5000')});
