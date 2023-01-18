@@ -24,7 +24,7 @@ app.post('/', async (req, res) => {
         const data = await moviesList.json();
         const search = data.Search;
         res.status(200).send({
-            movies: search
+            movies: 'wow'
         });
     } catch (error) {
         console.log(error);

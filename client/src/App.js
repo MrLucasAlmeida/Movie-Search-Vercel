@@ -34,7 +34,6 @@ const App = () => {
       const err = await response.json();
       console.log(err);
       console.log("ERROR");
-      alert(err);
     }
     
 
