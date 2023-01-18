@@ -12,7 +12,7 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const movieSearch = async (title) => {
-    const response = await fetch('https://movie-search-app-ljeh.onrender.com/', {
+    const response = await fetch('https://movie-search-kjok.onrender.com/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
