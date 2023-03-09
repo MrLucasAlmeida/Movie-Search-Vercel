@@ -12,7 +12,7 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const movieSearch = async (title) => {
-    const response = await fetch('https://movie-search-kjok.onrender.com/', {
+    const response = await fetch('http://localhost:5000', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -73,8 +73,8 @@ const App = () => {
         movies?.length > 0 ? (
           <div className='container'>
             {
-            movies.map((movie) =>  (
-              <MovieCard movie={movie}/>
+            movies.map((movie, idx) =>  (
+              <MovieCard movie={movie} key={idx}/>
             ))}
             
           </div>
