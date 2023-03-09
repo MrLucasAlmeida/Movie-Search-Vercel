@@ -18,9 +18,9 @@ app.get('/', (req, res) => {
     });
 });
 
-app.post('/', async (req, res) => {
+app.get('/:query', async (req, res) => {
     try {
-        const moviesList = await fetch(`${URL}&s=${req.body.query}`);
+        const moviesList = await fetch(`${URL}&s=${req.params.query}`);
         const data = await moviesList.json();
         const search = data.Search;
         res.status(200).send({
