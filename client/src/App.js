@@ -17,6 +17,9 @@ const App = () => {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
+    },
+    body: {
+      query: title
     }
   });
     if (response.ok) {
