@@ -14,7 +14,7 @@ const App = () => {
 
   const movieSearch = async (title) => {
     const response = await fetch(`${MAIN_URL}/${title}`, {
-    method: 'GET',
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
