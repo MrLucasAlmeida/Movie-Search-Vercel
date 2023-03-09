@@ -13,14 +13,14 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const movieSearch = async (title) => {
-    const response = await fetch(`${MAIN_URL}/${title}`, {
+    const response = await fetch(`${MAIN_URL}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: {
-      query: title
-    }
+    body: JSON.stringify({
+        query: title
+      })
   });
     if (response.ok) {
       const data = await response.json();
