@@ -38,7 +38,6 @@ app.get('/:query', async (req, res) => {
         });
     } catch (error) {
         console.log(error);
-        const err = await response.json();
         res.status(500).send({ err });
 
     }
