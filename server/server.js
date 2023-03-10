@@ -15,14 +15,14 @@ app.use(express.urlencoded({ extended: false }));
 const URL = 'http://www.omdbapi.com?apikey=' + process.env.OMDB_API_KEY;
 const port = process.env.PORT || 5000;
 
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    next();
-  });
+// app.use((req, res, next) => {
+//     res.setHeader("Access-Control-Allow-Origin", "*");
+//     res.header(
+//       "Access-Control-Allow-Headers",
+//       "Origin, X-Requested-With, Content-Type, Accept"
+//     );
+//     next();
+//   });
 
 
 
