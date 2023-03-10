@@ -9,16 +9,16 @@ app.use(cors());
 app.use(express.json());
 
 const URL = 'http://www.omdbapi.com?apikey=' + process.env.OMDB_API_KEY;
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    next();
-  });
+// app.use((req, res, next) => {
+//     res.setHeader("Access-Control-Allow-Origin", "*");
+//     res.header(
+//       "Access-Control-Allow-Headers",
+//       "Origin, X-Requested-With, Content-Type, Accept"
+//     );
+//     next();
+//   });
 
 
 
@@ -44,4 +44,4 @@ app.post('/', async (req, res) => {
 });
 
 
-app.listen(PORT, () => {console.log('Server is running on port http://localhost:' + PORT)});
+app.listen(port, () => {console.log('Server is running on port http://localhost:' + port)});
