@@ -7,9 +7,9 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: false }));
 app.use(cors({
-    origin: ["http://localhost:3000", "https://movie-search-app-frontend.onrender.com"]
+    origin: ["http://localhost:3000", "https://movie-search-app-frontend.onrender.com"],
 }));
 
 const URL = 'http://www.omdbapi.com?apikey=' + process.env.OMDB_API_KEY;
@@ -34,9 +34,13 @@ app.get('/', (req, res) => {
 
 app.post('/', async (req, res) => {
     try {
+        console.log("started to fetch");
+        console.log(req.body.query);
         const moviesList = await fetch(`${URL}&s=${req.body.query}`);
         const data = await moviesList.json();
+        console.log(data);
         const search = data.Search;
+        console.log(search);
         res.status(200).send({
             movies: search
         });
