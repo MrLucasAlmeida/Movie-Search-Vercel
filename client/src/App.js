@@ -22,6 +22,16 @@ const App = () => {
         query: title
       })
   });
+
+  // const response = await fetch(`${MAIN_URL}`, {
+  //   method: 'GET',
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   }
+  // });
+
+
+
     if (response.ok) {
       const data = await response.json();
       // returns if the data is empty
