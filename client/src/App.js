@@ -7,8 +7,8 @@ import MovieCard from './MovieCard';
 
 const App = () => {
 
-  // const MAIN_URL = 'https://movie-search-app-backend.onrender.com/';
-  const MAIN_URL = 'http://159.65.225.35:5000/'
+  // const MAIN_URL = 'http://localhost:5000/';
+  const MAIN_URL = 'https://backend.mrlucasalmeida.com:5000/';
   const [movies,setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 

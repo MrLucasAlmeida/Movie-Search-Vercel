@@ -3,6 +3,9 @@ import * as dotenv from 'dotenv';
 import cors from 'cors';
 import fetch from 'node-fetch';
 
+const fs = require('fs');
+const https = require('https');
+
 dotenv.config();
 
 const app = express();
@@ -42,4 +45,12 @@ app.post('/', async (req, res) => {
 });
 
 
-app.listen(port, () => {console.log('Server is running on port http://localhost:' + port)});
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/example.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/example.com/fullchain.pem', 'utf8');
+const credentials = { key: privateKey, cert: certificate };
+
+const httpsServer = https.createServer(credentials, app);
+
+httpsServer.listen(port, () => {
+  console.log(`Backend server listening at https://localhost:${port}`);
+});
