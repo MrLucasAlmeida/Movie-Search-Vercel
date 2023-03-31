@@ -2,9 +2,9 @@ import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
 import fetch from 'node-fetch';
+import fs from 'fs';
+import https from 'https';
 
-const fs = require('fs');
-const https = require('https');
 
 dotenv.config();
 
