@@ -45,8 +45,8 @@ app.post('/', async (req, res) => {
 });
 
 
-const privateKey = fs.readFileSync('/etc/letsencrypt/live/161.35.99.36/privkey.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/letsencrypt/live/161.35.99.36/fullchain.pem', 'utf8');
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/backend.mrlucasalmeida.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/backend.mrlucasalmeida.com/fullchain.pem', 'utf8');
 const credentials = { key: privateKey, cert: certificate };
 
 const httpsServer = https.createServer(credentials, app);
