@@ -8,7 +8,7 @@ import MovieCard from './MovieCard';
 const App = () => {
 
   // const MAIN_URL = 'http://localhost:5000/';
-  const MAIN_URL = 'https://161.35.99.36:5000/';
+  const MAIN_URL = 'https://backend.mrlucasalmeida.com:5000/';
   const [movies,setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
