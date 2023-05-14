@@ -9,9 +9,12 @@ const App = () => {
 
   // const MAIN_URL = 'http://localhost:5000/';
   const MAIN_URL = 'https://backend.mrlucasalmeida.com:5000/';
+
+
   const [movies,setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
+  // grabs the movies based on search
   const movieSearch = async (title) => {
     const response = await fetch(`${MAIN_URL}`, {
     method: 'POST',
@@ -23,6 +26,7 @@ const App = () => {
       })
   });
 
+    /
 
     if (response.ok) {
       const data = await response.json();
@@ -42,10 +46,13 @@ const App = () => {
 
   }
 
+  // updates the movies on the first render
+
   useEffect(() => {
     movieSearch(searchTerm);
   }, []);
 
+  // updates the movies on the search term change
   useEffect(() => {
     movieSearch(searchTerm);
   }, [searchTerm])
@@ -72,6 +79,7 @@ const App = () => {
         />
       </div>
 
+    {/* displays the movies or says that no movies were found if movies array empty */}
       {
         movies?.length > 0 ? (
           <div className='container'>
