@@ -26,8 +26,6 @@ const App = () => {
       })
   });
 
-    /
-
     if (response.ok) {
       const data = await response.json();
       // returns if the data is empty
